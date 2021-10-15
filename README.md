@@ -80,7 +80,7 @@ This command runs the linters for the project
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/SamroodAli/react-calculator/issues).
+Feel free to check the [issues page](https://github.com/SamroodAli/magic-books/issues).
 
 ## Show your support
 
