@@ -19,15 +19,17 @@ const CategoryForm = ({ changeFilter }) => {
   };
 
   const renderForm = ({ handleSubmit }) => (
-    <form onSubmit={handleSubmit} className="ui form error">
-
-      <Field name="category" component="select">
-        {CATEGORIES.map((category) => (
-          <option key={category} value={category}>
-            {category}
-          </option>
-        ))}
-      </Field>
+    <form onSubmit={handleSubmit} className="ui form">
+      <label htmlFor="category">
+        Choose filter
+        <Field name="category" component="select">
+          {CATEGORIES.map((category) => (
+            <option key={category} value={category}>
+              {category}
+            </option>
+          ))}
+        </Field>
+      </label>
 
     </form>
   );

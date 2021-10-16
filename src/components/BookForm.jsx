@@ -53,16 +53,19 @@ const BookForm = ({ initialValues, handleChange }) => {
   };
 
   const renderForm = ({ handleSubmit }) => (
-    <form onSubmit={handleSubmit} className="ui form error">
+    <form onSubmit={handleSubmit} className="ui form error ">
       <Field name="title" component={renderInput} label="Enter Title" />
 
-      <Field name="category" component="select">
-        {CATEGORIES.map((category) => (
-          <option key={category} value={category}>
-            {category}
-          </option>
-        ))}
-      </Field>
+      <label htmlFor="category">
+        Choose category
+        <Field name="category" component="select">
+          {CATEGORIES.map((category) => (
+            <option key={category} value={category}>
+              {category}
+            </option>
+          ))}
+        </Field>
+      </label>
 
       <button type="submit" className="ui button primary">
         Create Book

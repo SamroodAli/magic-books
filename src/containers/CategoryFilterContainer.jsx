@@ -1,10 +1,10 @@
-// import CategoryFilter from '../components/categoryFilter';
+import CategoryFilter from '../components/CategoryFilter';
 import useActions from '../hooks/useActions';
 
 const CategoryFilterContainer = () => {
   const { changeFilter } = useActions();
   return (
-    <button type="button" onClick={() => changeFilter('Action')}>Hello</button>
+    <CategoryFilter changeFilter={changeFilter} />
   );
 };
 
