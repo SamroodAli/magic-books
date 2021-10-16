@@ -7,7 +7,7 @@ const BooksList = ({ books }) => {
   ));
 
   return (
-    <table>
+    <table className="ui celled table">
       <thead>
         <tr>
           <th>Id</th>

@@ -1,4 +1,4 @@
-import BooksForm from '../containers/BooksFormContainer';
+import BooksForm from './BooksForm';
 import BooksList from '../containers/BooksListContainer';
 
 const App = () => (
