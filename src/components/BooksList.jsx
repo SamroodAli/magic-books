@@ -1,13 +1,11 @@
 import PropTypes from 'prop-types';
+import Book from './Book';
 
 const BooksList = ({ books }) => {
   const renderBooks = books.map(({ id, title, category }) => (
-    <tr key={id}>
-      <td>{id}</td>
-      <td>{title}</td>
-      <td>{category}</td>
-    </tr>
+    <Book key={id} id={id} title={title} category={category} />
   ));
+
   return (
     <table>
       <thead>
