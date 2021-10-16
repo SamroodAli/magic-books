@@ -1,5 +1,5 @@
 import { nanoid } from 'nanoid';
-import { CREATE_BOOK, REMOVE_BOOK } from './actionTypes';
+import { CREATE_BOOK, REMOVE_BOOK, CHANGE_FILTER } from './actionTypes';
 
 export * from './actionTypes';
 
@@ -15,4 +15,9 @@ export const addBook = ({ title, category }) => ({
 export const removeBook = (id) => ({
   type: REMOVE_BOOK,
   payload: id,
+});
+
+export const changeFilter = (filter) => ({
+  type: CHANGE_FILTER,
+  payload: filter,
 });
