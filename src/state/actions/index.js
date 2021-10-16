@@ -1,5 +1,5 @@
 import { nanoid } from 'nanoid';
-import { CREATE_BOOK, REMOVE_BOOK } from './actionTypes';
+import { CREATE_BOOK, REMOVE_BOOK, CHANGE_FILTER } from './actionTypes';
 
 export * from './actionTypes';
 
