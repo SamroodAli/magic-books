@@ -2,13 +2,16 @@ const BooksList = () => (
   <table>
     <thead>
       <tr>
-        <th colSpan="2">The table header</th>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Category</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>The table body</td>
-        <td>with two columns</td>
+        <td>Book Id</td>
+        <td>Book title</td>
+        <td>Book category</td>
       </tr>
     </tbody>
   </table>
