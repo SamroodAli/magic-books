@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const CATEGORIES = [
-  '',
+  'All',
   'Action',
   'Biography',
   'History',
