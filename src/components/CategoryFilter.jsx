@@ -1,5 +1,4 @@
 import React from 'react';
-import { Form, Field } from 'react-final-form';
 import PropTypes from 'prop-types';
 
 const CATEGORIES = [
@@ -13,37 +12,29 @@ const CATEGORIES = [
   'Sci-Fi',
 ];
 
-const CategoryForm = ({ handleFilterChange }) => {
-  const onSubmit = (filter) => {
-    handleFilterChange(filter);
+const CategoryFilter = ({ handleFilterChange }) => {
+  const onSelect = (event) => {
+    handleFilterChange(event.target.value);
   };
 
-  const renderForm = ({ handleSubmit }) => (
-    <form onSubmit={handleSubmit} className="ui form">
+  return (
+    <div className="ui form">
       <label htmlFor="category">
         Choose filter
-        <Field name="category" component="select">
+        <select name="category" onChange={onSelect}>
           {CATEGORIES.map((category) => (
             <option key={category} value={category}>
               {category}
             </option>
           ))}
-        </Field>
+        </select>
       </label>
-
-    </form>
-  );
-
-  return (
-    <Form
-      onSubmit={onSubmit}
-      render={renderForm}
-    />
+    </div>
   );
 };
 
-CategoryForm.propTypes = {
+CategoryFilter.propTypes = {
   handleFilterChange: PropTypes.func.isRequired,
 };
 
-export default CategoryForm;
+export default CategoryFilter;

@@ -14,10 +14,6 @@ const CATEGORIES = [
 ];
 
 const BookForm = ({ initialValues, handleChange }) => {
-  const onSubmit = (formValues) => {
-    handleChange(formValues);
-  };
-
   const renderError = ({ error, touched }) => {
     if (touched && error) {
       return (
@@ -90,7 +86,7 @@ const BookForm = ({ initialValues, handleChange }) => {
   return (
     <Form
       initialValues={initialValues}
-      onSubmit={onSubmit}
+      onSubmit={handleChange}
       validate={validate}
       render={renderForm}
     />
