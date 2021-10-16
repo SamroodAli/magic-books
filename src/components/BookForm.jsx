@@ -13,9 +13,9 @@ const CATEGORIES = [
   'Sci-Fi',
 ];
 
-const BookForm = ({ initialValues, onFormSubmit }) => {
+const BookForm = ({ initialValues, handleChange }) => {
   const onSubmit = (formValues) => {
-    onFormSubmit(formValues);
+    handleChange(formValues);
   };
 
   const renderError = ({ error, touched }) => {
@@ -101,7 +101,7 @@ BookForm.propTypes = {
     title: PropTypes.string,
     category: PropTypes.string,
   }),
-  onFormSubmit: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
 };
 
 export default BookForm;
