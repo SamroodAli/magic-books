@@ -2,8 +2,7 @@ import { createStore } from 'redux';
 import { nanoid } from 'nanoid';
 import rootReducer from './reducers';
 
-export * as actionCreators from './action-creators';
-
+export * as actionCreators from './actions';
 const initialState = {
   books: [
     {
