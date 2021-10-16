@@ -1,23 +1,27 @@
 import PropTypes from 'prop-types';
 import Book from './Book';
+import CategoryFilter from './CategoryFilter';
 
-const BooksList = ({ books, handleRemoveBook }) => {
+const BooksList = ({ books, handleRemoveBook, handleFilterChange }) => {
   const renderBooks = books.map(({ id, title, category }) => (
     <Book key={id} id={id} title={title} category={category} handleRemoveBook={handleRemoveBook} />
   ));
 
   return (
-    <table className="ui celled table">
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th>Title</th>
-          <th>Category</th>
-          <th>Remove Book</th>
-        </tr>
-      </thead>
-      <tbody>{renderBooks}</tbody>
-    </table>
+    <div className="ui container">
+      <CategoryFilter handleFilterChange={handleFilterChange} />
+      <table className="ui celled table">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Remove Book</th>
+          </tr>
+        </thead>
+        <tbody>{renderBooks}</tbody>
+      </table>
+    </div>
   );
 };
 
@@ -34,5 +38,6 @@ BooksList.propTypes = {
     }),
   ),
   handleRemoveBook: PropTypes.func.isRequired,
+  handleFilterChange: PropTypes.func.isRequired,
 };
 export default BooksList;

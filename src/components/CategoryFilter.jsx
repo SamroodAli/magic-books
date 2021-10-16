@@ -13,9 +13,9 @@ const CATEGORIES = [
   'Sci-Fi',
 ];
 
-const CategoryForm = ({ changeFilter }) => {
+const CategoryForm = ({ handleFilterChange }) => {
   const onSubmit = (filter) => {
-    changeFilter(filter);
+    handleFilterChange(filter);
   };
 
   const renderForm = ({ handleSubmit }) => (
@@ -43,7 +43,7 @@ const CategoryForm = ({ changeFilter }) => {
 };
 
 CategoryForm.propTypes = {
-  changeFilter: PropTypes.func.isRequired,
+  handleFilterChange: PropTypes.func.isRequired,
 };
 
 export default CategoryForm;

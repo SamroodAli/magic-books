@@ -4,8 +4,14 @@ import useActions from '../hooks/useActions';
 
 const BooksListContainer = () => {
   const books = useSelector(({ books }) => books);
-  const { removeBook } = useActions();
-  return <BooksList books={books} handleRemoveBook={removeBook} />;
+  const { removeBook, changeFilter } = useActions();
+  return (
+    <BooksList
+      books={books}
+      handleRemoveBook={removeBook}
+      handleFilterChange={changeFilter}
+    />
+  );
 };
 
 export default BooksListContainer;
