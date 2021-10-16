@@ -10,7 +10,7 @@ const Book = ({
       <td>{title}</td>
       <td>{category}</td>
       <td>
-        <button type="button" onClick={removeBook} className="ui button warning">{`Remove ${title}`}</button>
+        <button type="button" onClick={removeBook} className="ui button red">{`Remove ${title}`}</button>
       </td>
     </tr>
   );

@@ -13,6 +13,7 @@ const BooksList = ({ books, handleRemoveBook }) => {
           <th>Id</th>
           <th>Title</th>
           <th>Category</th>
+          <th>Remove Book</th>
         </tr>
       </thead>
       <tbody>{renderBooks}</tbody>
