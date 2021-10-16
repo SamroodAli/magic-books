@@ -2,7 +2,7 @@ import BooksForm from '../containers/BooksFormContainer';
 import BooksList from '../containers/BooksListContainer';
 
 const App = () => (
-  <div>
+  <div className="ui container">
     <BooksForm />
     <BooksList />
   </div>

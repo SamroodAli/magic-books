@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import Book from './Book';
 
-const BooksList = ({ books }) => {
+const BooksList = ({ books, handleRemoveBook }) => {
   const renderBooks = books.map(({ id, title, category }) => (
-    <Book key={id} id={id} title={title} category={category} />
+    <Book key={id} id={id} title={title} category={category} handleRemoveBook={handleRemoveBook} />
   ));
 
   return (
@@ -13,6 +13,7 @@ const BooksList = ({ books }) => {
           <th>Id</th>
           <th>Title</th>
           <th>Category</th>
+          <th>Remove Book</th>
         </tr>
       </thead>
       <tbody>{renderBooks}</tbody>
@@ -32,5 +33,6 @@ BooksList.propTypes = {
       category: PropTypes.string,
     }),
   ),
+  handleRemoveBook: PropTypes.func.isRequired,
 };
 export default BooksList;

@@ -13,7 +13,11 @@ const CATEGORIES = [
   'Sci-Fi',
 ];
 
-const BookForm = ({ initialValues, onFormSubmit }) => {
+const BookForm = ({ initialValues, handleChange }) => {
+  const onSubmit = (formValues) => {
+    handleChange(formValues);
+  };
+
   const renderError = ({ error, touched }) => {
     if (touched && error) {
       return (
@@ -27,7 +31,9 @@ const BookForm = ({ initialValues, onFormSubmit }) => {
 
   const renderInput = ({ input, label, meta }) => {
     const className = `field ${meta.error && meta.touched ? 'error' : ''}`;
-    const { name, checked, value, onChange, onFocus, onBlur     } = input;
+    const {
+      name, checked, value, onChange, onFocus, onBlur,
+    } = input;
     return (
       <div className={className}>
         <label htmlFor={label}>{label}</label>
@@ -46,10 +52,6 @@ const BookForm = ({ initialValues, onFormSubmit }) => {
     );
   };
 
-  const onSubmit = (formValues) => {
-    onFormSubmit(formValues);
-  };
-
   const renderForm = ({ handleSubmit }) => (
     <form onSubmit={handleSubmit} className="ui form error">
       <Field name="title" component={renderInput} label="Enter Title" />
@@ -61,6 +63,7 @@ const BookForm = ({ initialValues, onFormSubmit }) => {
           </option>
         ))}
       </Field>
+
       <button type="submit" className="ui button primary">
         Create Book
       </button>
@@ -99,7 +102,7 @@ BookForm.propTypes = {
     title: PropTypes.string,
     category: PropTypes.string,
   }),
-  onFormSubmit: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
 };
 
 export default BookForm;
