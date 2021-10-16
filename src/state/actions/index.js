@@ -1,6 +1,8 @@
 import { nanoid } from 'nanoid';
 import { CREATE_BOOK, REMOVE_BOOK } from './actionTypes';
 
+export * from './actionTypes';
+
 export const addBook = ({ title, category }) => ({
   type: CREATE_BOOK,
   payload: {
