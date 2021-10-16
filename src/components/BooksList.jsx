@@ -2,10 +2,24 @@ import PropTypes from 'prop-types';
 import Book from './Book';
 import CategoryFilter from './CategoryFilter';
 
-const BooksList = ({ books, handleRemoveBook, handleFilterChange }) => {
-  const renderBooks = books.map(({ id, title, category }) => (
+const BooksList = ({
+  books,
+  currentFilter,
+  handleRemoveBook,
+  handleFilterChange,
+}) => {
+  const bookToBookElement = ({ id, title, category }) => (
     <Book key={id} id={id} title={title} category={category} handleRemoveBook={handleRemoveBook} />
-  ));
+  );
+
+  const currentFilterBooksOnly = (book) => {
+    if (currentFilter === 'All') {
+      return true;
+    }
+    return book.category === currentFilter;
+  };
+
+  const renderBooks = books.filter(currentFilterBooksOnly).map(bookToBookElement);
 
   return (
     <div className="ui container">
@@ -27,6 +41,7 @@ const BooksList = ({ books, handleRemoveBook, handleFilterChange }) => {
 
 BooksList.defaultProps = {
   books: [],
+  currentFilter: 'All',
 };
 
 BooksList.propTypes = {
@@ -37,6 +52,7 @@ BooksList.propTypes = {
       category: PropTypes.string,
     }),
   ),
+  currentFilter: PropTypes.string,
   handleRemoveBook: PropTypes.func.isRequired,
   handleFilterChange: PropTypes.func.isRequired,
 };
