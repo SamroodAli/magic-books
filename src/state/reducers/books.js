@@ -1,7 +1,7 @@
 // import Actions
 // import action types
 
-const booksReducer = (state = {}, action) => {
+const booksReducer = (state = [], action) => {
   switch (action.type) {
     default:
       return state;
