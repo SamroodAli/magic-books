@@ -14,6 +14,10 @@ const CATEGORIES = [
 ];
 
 const BookForm = ({ initialValues, onFormSubmit }) => {
+  const onSubmit = (formValues) => {
+    onFormSubmit(formValues);
+  };
+
   const renderError = ({ error, touched }) => {
     if (touched && error) {
       return (
@@ -27,7 +31,9 @@ const BookForm = ({ initialValues, onFormSubmit }) => {
 
   const renderInput = ({ input, label, meta }) => {
     const className = `field ${meta.error && meta.touched ? 'error' : ''}`;
-    const { name, checked, value, onChange, onFocus, onBlur     } = input;
+    const {
+      name, checked, value, onChange, onFocus, onBlur,
+    } = input;
     return (
       <div className={className}>
         <label htmlFor={label}>{label}</label>
@@ -44,10 +50,6 @@ const BookForm = ({ initialValues, onFormSubmit }) => {
         {renderError(meta)}
       </div>
     );
-  };
-
-  const onSubmit = (formValues) => {
-    onFormSubmit(formValues);
   };
 
   const renderForm = ({ handleSubmit }) => (
