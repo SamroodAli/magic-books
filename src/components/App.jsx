@@ -1,6 +1,10 @@
-const App = ()=>{
-  return (
-    <h1>Magic Books</h1>
-  )
-}
-export default App
+import BooksForm from '../containers/BooksFormContainer';
+import BooksList from '../containers/BooksListContainer';
+
+const App = () => (
+  <div>
+    <BooksForm />
+    <BooksList />
+  </div>
+);
+export default App;
