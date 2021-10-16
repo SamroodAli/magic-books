@@ -3,6 +3,7 @@ import { Form, Field } from 'react-final-form';
 import PropTypes from 'prop-types';
 
 const CATEGORIES = [
+  '',
   'Action',
   'Biography',
   'History',
@@ -53,7 +54,7 @@ const BookForm = ({ initialValues, onFormSubmit }) => {
     <form onSubmit={handleSubmit} className="ui form error">
       <Field name="title" component={renderInput} label="Enter Title" />
 
-      <Field name="favoriteColor" component="select">
+      <Field name="category" component="select">
         {CATEGORIES.map((category) => (
           <option key={category} value={category}>
             {category}
