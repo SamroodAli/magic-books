@@ -1,9 +1,8 @@
 import BooksForm from '../components/BookForm';
+import useActions from '../hooks/useActions';
 
 const BooksFormContainer = () => {
-  const onSubmit = (formValues) => {
-    console.log(formValues);
-  };
-  return <BooksForm onFormSubmit={onSubmit} />;
+  const { addBook } = useActions();
+  return <BooksForm onFormSubmit={addBook} />;
 };
 export default BooksFormContainer;
