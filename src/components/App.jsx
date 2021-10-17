@@ -7,7 +7,6 @@ const App = () => (
     <Header />
     <div className="body">
       <BooksList />
-
       <BooksForm />
     </div>
   </div>

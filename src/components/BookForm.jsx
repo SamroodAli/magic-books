@@ -49,22 +49,25 @@ const BookForm = ({ initialValues, handleChange }) => {
   };
 
   const renderForm = ({ handleSubmit }) => (
-    <div className="form-container">
-      <span className="Title Text-Style-10">ADD NEW BOOK</span>
-      <form onSubmit={handleSubmit} className="form">
-        <Field name="title" component={renderInput} label="Enter Title" />
+    <>
+      <hr />
+      <div className="form-container">
+        <span className="Title Text-Style-10">ADD NEW BOOK</span>
+        <form onSubmit={handleSubmit} className="form">
+          <Field name="title" component={renderInput} label="Enter Title" />
 
-        <Field name="category" component="select" placeholder="Choose Category" className="select Lesson-Panel">
-          {CATEGORIES.map((category) => (
-            <option key={category} value={category}>
-              {category}
-            </option>
-          ))}
-        </Field>
+          <Field name="category" component="select" placeholder="Choose Category" className="select Lesson-Panel">
+            {CATEGORIES.map((category) => (
+              <option key={category} value={category}>
+                {category}
+              </option>
+            ))}
+          </Field>
 
-        <button type="submit" className="Rectangle-2">Create Book</button>
-      </form>
-    </div>
+          <button type="submit" className="Rectangle-2">Create Book</button>
+        </form>
+      </div>
+    </>
   );
 
   const validate = (formValues) => {
