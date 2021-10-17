@@ -64,7 +64,7 @@ const BookForm = ({ initialValues, handleChange }) => {
             ))}
           </Field>
 
-          <button type="submit" className="Rectangle-2">Create Book</button>
+          <button type="submit" className="Rectangle-2">Add Book</button>
         </form>
       </div>
     </>

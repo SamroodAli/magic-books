@@ -96,15 +96,15 @@
 .form {
   display: flex;
   align-items: center;
-  justify-content: stretch;
+  justify-content: space-between;
   color: grey;
   margin-top: 1rem;
 }
 
 .title.Lesson-Panel {
-  width: 41.5rem;
+  width: 50rem;
   height: 2.813rem;
-  margin-right: 2rem;
+  margin-right: 1rem;
   border-radius: 4px;
   border: solid 1px silver;
   background-color: #fff;
