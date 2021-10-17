@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const CATEGORIES = [
-  'All',
+  'Categories',
   'Action',
   'Biography',
   'History',
@@ -18,15 +18,13 @@ const CategoryFilter = ({ handleFilterChange }) => {
   };
 
   return (
-    <label htmlFor="category">
-      <select name="category" onChange={onSelect}>
-        {CATEGORIES.map((category) => (
-          <option key={category} value={category}>
-            {category}
-          </option>
-        ))}
-      </select>
-    </label>
+    <select name="category" className="category" onChange={onSelect} placeholder="Categories">
+      {CATEGORIES.map((category) => (
+        <option key={category} value={category}>
+          {category}
+        </option>
+      ))}
+    </select>
   );
 };
 

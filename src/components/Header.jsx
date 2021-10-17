@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import CategoryFilter from './CategoryFilter';
 
 const Header = ({ handleFilterChange }) => (
-  <div className="panel-bg">
+  <div className="header panel-bg">
     <span className="Bookstore-CMS Text-Style-5"> Bookstore CMS </span>
     <span className="BOOKS Text-Style-7"> BOOKS </span>
     <span className="CATEGORIES Text-Style-7">
