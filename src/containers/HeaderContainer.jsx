@@ -1,19 +1,13 @@
-import { useSelector } from 'react-redux';
-import BooksList from '../components/BooksList';
+import Header from '../components/Header';
 import useActions from '../hooks/useActions';
 
-const BooksListContainer = () => {
-  const { books, filter } = useSelector((state) => state);
-
-  const { removeBook, changeFilter } = useActions();
+const HeaderContainer = () => {
+  const { changeFilter } = useActions();
   return (
-    <BooksList
-      books={books}
-      currentFilter={filter}
-      handleRemoveBook={removeBook}
+    <Header
       handleFilterChange={changeFilter}
     />
   );
 };
 
-export default BooksListContainer;
+export default HeaderContainer;

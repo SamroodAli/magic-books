@@ -1,6 +1,6 @@
 import BooksForm from '../containers/BooksFormContainer';
 import BooksList from '../containers/BooksListContainer';
-import Header from './Header';
+import Header from '../containers/HeaderContainer';
 
 const App = () => (
   <div>
