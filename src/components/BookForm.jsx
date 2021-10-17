@@ -30,9 +30,9 @@ const BookForm = ({ initialValues, handleChange }) => {
       name, checked, value, onChange, onFocus, onBlur,
     } = input;
     return (
-      <div className="Lesson-Panel">
-        <label htmlFor={label}>{label}</label>
+      <div>
         <input
+          className="title Lesson-Panel"
           id={label}
           name={name}
           checked={checked}
@@ -41,6 +41,7 @@ const BookForm = ({ initialValues, handleChange }) => {
           onFocus={onFocus}
           onBlur={onBlur}
           autoComplete="off"
+          placeholder="Book title"
         />
         {renderError(meta)}
       </div>
@@ -53,7 +54,7 @@ const BookForm = ({ initialValues, handleChange }) => {
       <form onSubmit={handleSubmit} className="form">
         <Field name="title" component={renderInput} label="Enter Title" />
 
-        <Field name="category" component="select" placeholder="Choose Category">
+        <Field name="category" component="select" placeholder="Choose Category" className="select Lesson-Panel">
           {CATEGORIES.map((category) => (
             <option key={category} value={category}>
               {category}
@@ -61,7 +62,7 @@ const BookForm = ({ initialValues, handleChange }) => {
           ))}
         </Field>
 
-        <button type="submit">Create Book</button>
+        <button type="submit" className="Rectangle-2">Create Book</button>
       </form>
     </div>
   );

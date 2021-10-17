@@ -5,8 +5,11 @@ import Header from './Header';
 const App = () => (
   <div>
     <Header />
-    <BooksList />
-    <BooksForm />
+    <div className="body">
+      <BooksList />
+
+      <BooksForm />
+    </div>
   </div>
 );
 export default App;
