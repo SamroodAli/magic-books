@@ -3,7 +3,7 @@ import { Form, Field } from 'react-final-form';
 import PropTypes from 'prop-types';
 
 const CATEGORIES = [
-  '',
+  'Choose Category',
   'Action',
   'Biography',
   'History',
@@ -26,14 +26,13 @@ const BookForm = ({ initialValues, handleChange }) => {
   };
 
   const renderInput = ({ input, label, meta }) => {
-    const className = `field ${meta.error && meta.touched ? 'error' : ''}`;
     const {
       name, checked, value, onChange, onFocus, onBlur,
     } = input;
     return (
-      <div className={className}>
-        <label htmlFor={label}>{label}</label>
+      <div>
         <input
+          className="title Lesson-Panel"
           id={label}
           name={name}
           checked={checked}
@@ -42,6 +41,7 @@ const BookForm = ({ initialValues, handleChange }) => {
           onFocus={onFocus}
           onBlur={onBlur}
           autoComplete="off"
+          placeholder="Book title"
         />
         {renderError(meta)}
       </div>
@@ -49,24 +49,25 @@ const BookForm = ({ initialValues, handleChange }) => {
   };
 
   const renderForm = ({ handleSubmit }) => (
-    <form onSubmit={handleSubmit} className="ui form error ">
-      <Field name="title" component={renderInput} label="Enter Title" />
+    <>
+      <hr />
+      <div className="form-container">
+        <span className="Title Text-Style-10">ADD NEW BOOK</span>
+        <form onSubmit={handleSubmit} className="form">
+          <Field name="title" component={renderInput} label="Enter Title" />
 
-      <label htmlFor="category">
-        Choose category
-        <Field name="category" component="select">
-          {CATEGORIES.map((category) => (
-            <option key={category} value={category}>
-              {category}
-            </option>
-          ))}
-        </Field>
-      </label>
+          <Field name="category" component="select" placeholder="Choose Category" className="select Lesson-Panel">
+            {CATEGORIES.map((category) => (
+              <option key={category} value={category}>
+                {category}
+              </option>
+            ))}
+          </Field>
 
-      <button type="submit" className="ui button primary">
-        Create Book
-      </button>
-    </form>
+          <button type="submit" className="Rectangle-2">Add Book</button>
+        </form>
+      </div>
+    </>
   );
 
   const validate = (formValues) => {
@@ -76,8 +77,8 @@ const BookForm = ({ initialValues, handleChange }) => {
       errors.title = 'You must enter a title';
     }
 
-    if (!formValues.category) {
-      errors.description = 'You must choose a category';
+    if (!formValues.category || formValues.category === 'Choose Category') {
+      errors.category = 'You must choose a category';
     }
 
     return errors;
