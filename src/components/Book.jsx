@@ -8,13 +8,13 @@ const Book = ({
   return (
     <div className="book-card">
       <div className="book-details">
-        <p>{category}</p>
+        <p className="School-of">{category}</p>
         <h5>{title}</h5>
-        <p>{`${faker.name.firstName()} ${faker.name.lastName()}`}</p>
+        <p className="author">{`${faker.name.firstName()} ${faker.name.lastName()}`}</p>
         <div className="book-buttons">
-          <button type="button">Comments</button>
-          <button type="button" onClick={removeBook}>Remove</button>
-          <button type="button" onClick={removeBook}>Edit</button>
+          <button type="button" className="Comments">Comments</button>
+          <button type="button" className="Remove" onClick={removeBook}>Remove</button>
+          <button type="button" className="Edit" onClick={removeBook}>Edit</button>
         </div>
       </div>
       <div className="book-progress">
@@ -29,8 +29,16 @@ const Book = ({
             </div>
           </div>
         </div>
+        <div>
+          <p className="Percent-Complete">90%</p>
+          <p className="Completed">Completed</p>
+        </div>
       </div>
-      <div className="book-chapter" />
+      <div className="book-chapter">
+        <p>Current chapter  </p>
+        <p>Chapter 17</p>
+        <button type="button" className="update-book-btn">Update progress</button>
+      </div>
     </div>
 
   );
