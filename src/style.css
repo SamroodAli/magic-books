@@ -109,6 +109,12 @@
   border-radius: 4px;
   border: solid 1px silver;
   background-color: #fff;
+  padding: 0 0.5rem;
+}
+
+::placeholder {
+  color: grey;
+  opacity: 1;
 }
 
 .select.Lesson-Panel {
