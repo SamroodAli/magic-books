@@ -1,10 +1,12 @@
 import BooksForm from '../containers/BooksFormContainer';
 import BooksList from '../containers/BooksListContainer';
+import Header from './Header';
 
 const App = () => (
-  <div className="ui container">
-    <BooksForm />
+  <div>
+    <Header />
     <BooksList />
+    <BooksForm />
   </div>
 );
 export default App;

@@ -18,18 +18,15 @@ const CategoryFilter = ({ handleFilterChange }) => {
   };
 
   return (
-    <div className="ui form">
-      <label htmlFor="category">
-        Choose filter
-        <select name="category" onChange={onSelect}>
-          {CATEGORIES.map((category) => (
-            <option key={category} value={category}>
-              {category}
-            </option>
-          ))}
-        </select>
-      </label>
-    </div>
+    <label htmlFor="category">
+      <select name="category" onChange={onSelect}>
+        {CATEGORIES.map((category) => (
+          <option key={category} value={category}>
+            {category}
+          </option>
+        ))}
+      </select>
+    </label>
   );
 };
 

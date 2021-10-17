@@ -49,7 +49,7 @@ const BookForm = ({ initialValues, handleChange }) => {
   };
 
   const renderForm = ({ handleSubmit }) => (
-    <form onSubmit={handleSubmit} className="ui form error ">
+    <form onSubmit={handleSubmit}>
       <Field name="title" component={renderInput} label="Enter Title" />
 
       <label htmlFor="category">
@@ -63,7 +63,7 @@ const BookForm = ({ initialValues, handleChange }) => {
         </Field>
       </label>
 
-      <button type="submit" className="ui button primary">
+      <button type="submit">
         Create Book
       </button>
     </form>
