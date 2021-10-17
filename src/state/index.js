@@ -3,4 +3,14 @@ import rootReducer from './reducers';
 
 export * as actionCreators from './actions';
 
-export default createStore(rootReducer);
+const initialState = {
+  books: [
+    {
+      id: 'some id',
+      title: 'title of book',
+      category: 'Action',
+    },
+  ],
+  filter: 'All',
+};
+export default createStore(rootReducer, initialState);

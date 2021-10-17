@@ -17,7 +17,19 @@ const Book = ({
           <button type="button" onClick={removeBook}>Edit</button>
         </div>
       </div>
-      <div className="book-progress" />
+      <div className="book-progress">
+        <div className="circular">
+          <div className="inner" />
+          <div className="circle">
+            <div className="bar left">
+              <div className="progress" />
+            </div>
+            <div className="bar right">
+              <div className="progress" />
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="book-chapter" />
     </div>
 
