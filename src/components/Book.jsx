@@ -1,18 +1,26 @@
 import PropTypes from 'prop-types';
+import faker from 'faker';
 
 const Book = ({
   id, title, category, handleRemoveBook,
 }) => {
   const removeBook = () => handleRemoveBook(id);
   return (
-    <tr key={id}>
-      <td>{id}</td>
-      <td>{title}</td>
-      <td>{category}</td>
-      <td>
-        <button type="button" onClick={removeBook} className="ui button red">{`Remove ${title}`}</button>
-      </td>
-    </tr>
+    <div className="book-card">
+      <div className="book-details">
+        <p>{category}</p>
+        <h5>{title}</h5>
+        <p>{`${faker.name.firstName()} ${faker.name.lastName()}`}</p>
+        <div className="book-buttons">
+          <button type="button">Comments</button>
+          <button type="button" onClick={removeBook}>Remove</button>
+          <button type="button" onClick={removeBook}>Edit</button>
+        </div>
+      </div>
+      <div className="book-progress" />
+      <div className="book-chapter" />
+    </div>
+
   );
 };
 

@@ -19,25 +19,9 @@ const BooksList = ({ books, currentFilter, handleRemoveBook }) => {
     return book.category === currentFilter;
   };
 
-  const renderBooks = books
+  return books
     .filter(currentFilterBooksOnly)
     .map(bookToBookElement);
-
-  return (
-    <div className>
-      <table>
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>Title</th>
-            <th>Category</th>
-            <th>Remove Book</th>
-          </tr>
-        </thead>
-        <tbody>{renderBooks}</tbody>
-      </table>
-    </div>
-  );
 };
 
 BooksList.defaultProps = {
